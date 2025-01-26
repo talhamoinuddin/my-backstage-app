@@ -2,39 +2,32 @@ app:
   title: Scaffolded Backstage App
   baseUrl: http://localhost:3000
 
-organization:
-  name: My Company
-
 backend:
-  # Used for enabling authentication, secret is shared by all backend plugins
-  # See https://backstage.io/docs/auth/service-to-service-auth for
-  # information on the format
-  # auth:
-  #   keys:
-  #     - secret: ${BACKEND_SECRET}
   baseUrl: http://localhost:7007
   listen:
     port: 7007
-    # Uncomment the following host directive to bind to specific interfaces
-    # host: 127.0.0.1
-  csp:
-    connect-src: ["'self'", 'http:', 'https:']
-    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
-    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
-  cors:
-    origin: http://localhost:3000
-    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
-    credentials: true
-  # This is for local development only, it is not recommended to use this in production
-  # The production database configuration is stored in app-config.production.yaml
   database:
     client: better-sqlite3
     connection: ':memory:'
-  # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+
+catalog:
+  import:
+    - type: file
+      target: ./catalog-info/my-component.yaml  # Path to your entity file
+
+  locations:
+    - type: github
+      target: https://github.com/talhamoinuddin/my-backstage-app/blob/main/catalog-info/my-component.yaml  # Import the component from the directory
+
+scaffolder:
+  templates:
+    - type: kubernetes-terraform/upload-terraform-and-run-docker
+      path: ./plugins/kubernetes-terraform/src/templates/upload-terraform-and-deploy-docker.yaml
 
 integrations:
   github:
     - host: github.com
+<<<<<<< HEAD
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
       token: ${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}
@@ -111,3 +104,6 @@ kubernetes:
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+=======
+      token: ${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}  # Make sure to set your GitHub token here
+>>>>>>> 53d961f (Add Backstage component YAML)
