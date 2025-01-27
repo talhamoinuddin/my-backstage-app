@@ -14,7 +14,7 @@ backend:
       - type: 'static'  # or other authentication types like 'oauth2', 'jwt', etc.
         secret: "${a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef}"
         options:
-          token: "${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}"
+          token: "${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}"
 
   baseUrl: http://localhost:7007
   listen:
@@ -42,7 +42,7 @@ integrations:
     - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
-      token: ${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}
+      token: ${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}
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
