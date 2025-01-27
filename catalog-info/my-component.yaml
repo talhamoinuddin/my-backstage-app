@@ -8,6 +8,7 @@ metadata:
     - api
 spec:
   type: service
+  lifecycle: production 
   owner: team-a
   dependsOn:
     - api: my-existing-api
