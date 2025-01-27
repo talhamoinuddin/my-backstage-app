@@ -31,6 +31,9 @@ backend:
     client: better-sqlite3
     connection: ':memory:'
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+  auth:
+    keys:
+      - secret: ${a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef}
 
 integrations:
   github:
