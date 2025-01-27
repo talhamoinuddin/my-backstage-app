@@ -28,8 +28,6 @@ node_modules/
 .nvmrc
 
 # dotenv environment variables file
-.env
-.env.test
 
 # Build output
 dist
