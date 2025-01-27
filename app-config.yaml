@@ -10,9 +10,9 @@ backend:
   # See https://backstage.io/docs/auth/service-to-service-auth for
   # information on the format
   auth:
-    keys:
+    externalAccess:
        - secret: ${a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef}
-       
+
   baseUrl: http://localhost:7007
   listen:
     port: 7007
