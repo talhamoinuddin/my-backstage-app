@@ -8,10 +8,12 @@ organization:
 backend:
   auth:
     externalAccess:
-      - type: 'static'  # Keep this if needed, or remove it if unnecessary
-        secret: "${82645f5c7c8049ba8fbc612889e31c93}"
+      - type: 'jwks'  # Keep this if needed, or remove it if unnecessary
+        secret: "${AUTH_BACKEND_SECRET}"
         options:
-          token: "${02b1f0035e4c4dbf9a9ccfba74dc3736}"
+          token: "${AUTH_BACKEND_TOKEN}"
+          subject: "${GITHUB_USER_ID}"
+          url: "https://github.com/login/oauth/access_token"
 
   baseUrl: http://localhost:7007
   listen:
@@ -26,20 +28,24 @@ backend:
   database:
     client: better-sqlite3
     connection: ':memory:'
-
+techdocs:
+  builder: 'local'  # or 'local'
+  publisher:
+    type: 'local'  # or your preferred publisher type
+    target: '/backstage/docs/output'
 
 integrations:
   github:
     - host: github.com
-      token: "${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}"  # ✅ Use an environment variable
+      token: "${GITHUB_TOKEN}"  # ✅ Use an environment variable
 
 auth:
   environment: development
   providers:
     github:
       development:
-        clientId: "${Ov23liK3cnmysFgWhcNN}"  # ✅ Use an environment variable
-        clientSecret: "${2345c0131a948a6ebee7f648f9ab1cc2e41aea47}"  # ✅ Use an environment variable
+        clientId: "Ov23liK3cnmysFgWhcNN"  # ✅ Use an environment variable
+        clientSecret: "2345c0131a948a6ebee7f648f9ab1cc2e41aea47"  # ✅ Use an environment variable
     guest: {}
 
 scaffolder:
@@ -74,11 +80,11 @@ kubernetes:
           authProvider: 'serviceAccount'
           skipTLSVerify: false
           skipMetricsLookup: true
-          serviceAccountToken: "${K8S_MINIKUBE_TOKEN}"  # ✅ Use an environment variable
+          serviceAccountToken: "${SERVICE_ACCOUNT_TOKEN}"  # ✅ Use an environment variable
           dashboardUrl: http://127.0.0.1:64713
           dashboardApp: standard
           caData: "${K8S_CONFIG_CA_DATA}"
-          caFile: ''
+          caFile: 'C:\Users\admin\.minikube\ca.crt'
 
 permission:
   enabled: true
