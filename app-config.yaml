@@ -45,7 +45,7 @@ auth:
     github:
       development:
         clientId: "Ov23liK3cnmysFgWhcNN"  # ✅ Use an environment variable
-        clientSecret: "2345c0131a948a6ebee7f648f9ab1cc2e41aea47"  # ✅ Use an environment variable
+        clientSecret: "4478e843fa6418fb905c38ca47c2b79d01b2d7c5"  # ✅ Use an environment variable
     guest: {}
 
 scaffolder:
