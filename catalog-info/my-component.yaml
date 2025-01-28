@@ -7,6 +7,8 @@ metadata:
     - web
     - api
 spec:
+  targets:
+    - ./templates/upload-terraform-and-run-docker.yaml
   type: service
   lifecycle: production 
   owner: team-a

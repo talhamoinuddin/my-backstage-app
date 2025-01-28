@@ -6,6 +6,7 @@ organization:
   name: My Company
 
 backend:
+  secret: "${BACKEND_SECRET_KEY}"
   auth:
     externalAccess:
       - type: 'jwks'  # Keep this if needed, or remove it if unnecessary
@@ -44,8 +45,8 @@ auth:
   providers:
     github:
       development:
-        clientId: "Ov23liK3cnmysFgWhcNN"  # ✅ Use an environment variable
-        clientSecret: "4478e843fa6418fb905c38ca47c2b79d01b2d7c5"  # ✅ Use an environment variable
+        clientId: ${AUTH_GITHUB_CLIENT_ID}# ✅ Use an environment variable
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}  # ✅ Use an environment variable
     guest: {}
 
 scaffolder:
