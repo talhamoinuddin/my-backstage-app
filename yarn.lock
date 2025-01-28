@@ -28316,6 +28316,7 @@ __metadata:
     "@backstage/core-plugin-api": "npm:^1.10.3"
     "@backstage/e2e-test-utils": "npm:^0.1.1"
     "@backstage/plugin-auth-backend": "npm:^0.24.2"
+    "@backstage/plugin-auth-backend-module-github-provider": "npm:^0.2.4"
     "@backstage/plugin-scaffolder": "npm:^1.27.4"
     "@backstage/plugin-scaffolder-backend": "npm:^1.29.0"
     "@playwright/test": "npm:^1.32.3"

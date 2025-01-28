@@ -11,7 +11,7 @@ backend.add(import('@backstage/plugin-techdocs-backend'));
 
 // Optional: Add the auth plugin only if needed
  backend.add(import('@backstage/plugin-auth-backend'));
-// backend.add(import('@backstage/plugin-auth-backend-module-github'));
+ backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 
 // Add the guest provider module (optional)
  backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));

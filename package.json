@@ -59,6 +59,7 @@
     "@backstage/core-components": "^0.16.3",
     "@backstage/core-plugin-api": "^1.10.3",
     "@backstage/plugin-auth-backend": "^0.24.2",
+    "@backstage/plugin-auth-backend-module-github-provider": "^0.2.4",
     "@backstage/plugin-scaffolder": "^1.27.4",
     "@backstage/plugin-scaffolder-backend": "^1.29.0"
   }
