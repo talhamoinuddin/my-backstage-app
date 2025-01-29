@@ -50,6 +50,9 @@ auth:
     guest: {}
 
 scaffolder:
+  locations:
+    - type: file
+      target: .packages/backend/template/upload-terraform-and-run-docker.yaml
   defaultAuthor:
     name: M.C. Hammer
     email: hammer@donthurtem.com
@@ -86,6 +89,9 @@ kubernetes:
           dashboardApp: standard
           caData: "${K8S_CONFIG_CA_DATA}"
           caFile: 'C:\Users\admin\.minikube\ca.crt'
+search:
+  engine:
+    type: 'memory'  # Or another appropriate search engine type
 
 permission:
   enabled: true

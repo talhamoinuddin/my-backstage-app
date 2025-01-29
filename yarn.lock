@@ -28319,6 +28319,7 @@ __metadata:
     "@backstage/plugin-auth-backend-module-github-provider": "npm:^0.2.4"
     "@backstage/plugin-scaffolder": "npm:^1.27.4"
     "@backstage/plugin-scaffolder-backend": "npm:^1.29.0"
+    "@backstage/plugin-search-backend-module-pg": "npm:^0.5.40"
     "@playwright/test": "npm:^1.32.3"
     node-gyp: "npm:^10.0.0"
     prettier: "npm:^2.3.2"
