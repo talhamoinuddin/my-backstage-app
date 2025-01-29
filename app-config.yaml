@@ -1,6 +1,6 @@
 app:
   title: Scaffolded Backstage App
-  baseUrl: "http://localhost:3000"
+  baseUrl: http://localhost:3000
 
 organization:
   name: My Company
@@ -19,13 +19,13 @@ backend:
           url: "http://localhost:7007/api/auth/github/handler/frame"
   events:
     broker: memory
-  baseUrl: "http://localhost:7007"
+  baseUrl: http://localhost:7007
   listen:
     port: 7007
   csp:
     connect-src: ["'self'", 'http:', 'https:']
   cors:
-    origin: "http://localhost:3000"
+    origin: http://localhost:3000
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
 
