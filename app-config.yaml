@@ -6,6 +6,7 @@ organization:
   name: My Company
 
 backend:
+  
   secret: "${BACKEND_SECRET_KEY}"
   auth:
     externalAccess:
@@ -15,7 +16,9 @@ backend:
           token: "${AUTH_BACKEND_TOKEN}"
           subject: "${GITHUB_USER_ID}"
           url: "https://github.com/login/oauth/access_token"
-
+  eventBus:
+    type: kafka  # Example event bus
+    url: kafka://localhost:9092
   baseUrl: http://localhost:7007
   listen:
     port: 7007
