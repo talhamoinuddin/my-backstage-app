@@ -70,7 +70,7 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     - type: file
-      target: ./templates/upload-terraform-and-run-docker.yaml
+      target: .packages/backend/template/upload-terraform-and-run-docker.yaml
       rules:
         - allow: [Template]
   processing:
