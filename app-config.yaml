@@ -49,7 +49,7 @@ auth:
   providers:
     github:
       development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}# ✅ Use an environment variable
+        clientId: ${AUTH_GITHUB_CLIENT_ID} # ✅ Use an environment variable
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}  # ✅ Use an environment variable
     guest: {}
 
