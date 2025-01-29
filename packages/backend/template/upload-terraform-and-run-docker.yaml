@@ -7,7 +7,7 @@ spec:
   owner: your-team
   type: service
   templater: handlebars
-  path: './templates/upload-terraform-and-run-docker'
+  path: '../template/upload-terraform-and-run-docker.yaml'
   steps:
     - name: Upload Frontend Terraform
       action: backstage:upload-files

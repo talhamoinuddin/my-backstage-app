@@ -1,6 +1,6 @@
 app:
   title: Scaffolded Backstage App
-  baseUrl: http://localhost:3000
+  baseUrl: "http://localhost:3000"
 
 organization:
   name: My Company
@@ -17,16 +17,15 @@ backend:
           token: "${AUTH_BACKEND_TOKEN}"
           subject: "${GITHUB_USER_ID}"
           url: "http://localhost:7007/api/auth/github/handler/frame"
-  eventBus:
-    type: kafka  # Example event bus
-    url: kafka://localhost:9092
-  baseUrl: http://localhost:7007
+  events:
+    broker: memory
+  baseUrl: "http://localhost:7007"
   listen:
     port: 7007
   csp:
     connect-src: ["'self'", 'http:', 'https:']
   cors:
-    origin: http://localhost:3000
+    origin: "http://localhost:3000"
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
 
@@ -41,7 +40,7 @@ techdocs:
 
 integrations:
   github:
-    - host: github.com
+    - host: 'github.com'
       token: "${GITHUB_TOKEN}"  # ✅ Use an environment variable
 
 auth:
@@ -49,14 +48,14 @@ auth:
   providers:
     github:
       development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID} # ✅ Use an environment variable
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}  # ✅ Use an environment variable
+        clientId: "${AUTH_GITHUB_CLIENT_ID}" # ✅ Use an environment variable
+        clientSecret: "${AUTH_GITHUB_CLIENT_SECRET}"  # ✅ Use an environment variable
     guest: {}
 
 scaffolder:
   locations:
     - type: file
-      target: './packages/backend/template/upload-terraform-and-run-docker.yaml'
+      target: '../template/upload-terraform-and-run-docker.yaml'
   defaultAuthor:
     name: M.C. Hammer
     email: hammer@donthurtem.com
@@ -69,9 +68,8 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location]
   locations:
-     
-    - type: file
-      target: './packages/backend/template/upload-terraform-and-run-docker.yaml'
+    - type: url
+      target: "https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml"
       rules:
         - allow: [Template]
   processing:
@@ -86,13 +84,13 @@ kubernetes:
   clusterLocatorMethods:
     - type: 'config'
       clusters:
-        - url: http://127.0.0.1:9999
+        - url: "http://127.0.0.1:9999"
           name: minikube
           authProvider: 'serviceAccount'
           skipTLSVerify: false
           skipMetricsLookup: true
           serviceAccountToken: "${SERVICE_ACCOUNT_TOKEN}"  # ✅ Use an environment variable
-          dashboardUrl: http://127.0.0.1:64713
+          dashboardUrl: "http://127.0.0.1:64713"
           dashboardApp: standard
           caData: "${K8S_CONFIG_CA_DATA}"
           caFile: 'C:\Users\admin\.minikube\ca.crt'
