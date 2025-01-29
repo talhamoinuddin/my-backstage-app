@@ -73,6 +73,8 @@ catalog:
       target: ./templates/upload-terraform-and-run-docker.yaml
       rules:
         - allow: [Template]
+  processing:
+    subscribeEnabled: false      
 
 kubernetes:
   frontend:
