@@ -9,13 +9,14 @@ backend:
   
   secret: "${BACKEND_SECRET_KEY}"
   auth:
+    
     externalAccess:
       - type: 'jwks'  # Keep this if needed, or remove it if unnecessary
         secret: "${AUTH_BACKEND_SECRET}"
         options:
           token: "${AUTH_BACKEND_TOKEN}"
           subject: "${GITHUB_USER_ID}"
-          url: "https://github.com/login/oauth/access_token"
+          url: "http://localhost:7007/api/auth/github/handler/frame"
   eventBus:
     type: kafka  # Example event bus
     url: kafka://localhost:9092
