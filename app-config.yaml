@@ -78,7 +78,7 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     - type: url
-      target: 'https://raw.githubusercontent.com/talhamoinuddin/my-backstage-app/main/catalog-info/user.yaml'
+      target: 'https://raw.githubusercontent.com/talhamoinuddin/my-backstage-app/main/catalog-info/users.yaml'
 
       rules:
         - allow: [Template]
