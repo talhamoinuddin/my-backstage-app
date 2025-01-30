@@ -7,6 +7,8 @@ metadata:
     - web
     - api
 spec:
+  profile:
+    displayName: my-component
   targets:
     - '../template/upload-terraform-and-run-docker.yaml'
   type: service
