@@ -16,14 +16,15 @@ backend:
         options:
           token: "${AUTH_BACKEND_TOKEN}"
           subject: "${GITHUB_USER_ID}"
-          url: http://localhost:7007/api/auth/github/handler/frame
+          url: http://localhost:7007/api/auth/github/handler/frame?env=development&origin=http://localhost:3000
+
   events:
     broker: memory
   baseUrl: http://localhost:7007
   listen:
     port: 7007
   csp:
-    connect-src: ["'self'", 'http:', 'https:']
+    connect-src: ["'self'",  "http://localhost:3000", "http://localhost:7007"]
   cors:
     origin: http://localhost:3000
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
@@ -69,7 +70,8 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
+      target: https://github.com/talhamoinuddin/my-backstage-app/blob/main/catalog-info/my-component.yaml
+
       rules:
         - allow: [Template]
   processing:
