@@ -1,18 +1,18 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: my-component
+  name: my-backstage-app
   description: "A description of my component"
   tags:
     - web
     - api
 spec:
   profile:
-    displayName: my-component
+    displayName: my-backstage-app
   targets:
     - '../template/upload-terraform-and-run-docker.yaml'
   type: service
   lifecycle: production 
   owner: team-a
   dependsOn:
-    - api: my-existing-api
+      - "api:default/my-existing-api"

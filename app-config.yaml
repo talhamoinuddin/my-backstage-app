@@ -6,7 +6,7 @@ organization:
   name: My Company
 
 backend:
-  
+
   secret: "${BACKEND_SECRET_KEY}"
   auth:
     
@@ -17,7 +17,7 @@ backend:
           token: "${AUTH_BACKEND_TOKEN}"
           subject: "${GITHUB_USER_ID}"
           url: http://localhost:7007/api/auth/github/handler/frame?env=development&origin=http://localhost:3000
-
+    allowGuestAccess: true
   events:
     broker: memory
   baseUrl: http://localhost:7007
@@ -33,6 +33,10 @@ backend:
   database:
     client: better-sqlite3
     connection: ':memory:'
+  reading:
+    allow:
+      - host: "raw.githubusercontent.com"
+
 techdocs:
   builder: 'local'  # or 'local'
   publisher:
@@ -43,7 +47,7 @@ integrations:
   github:
     - host: 'github.com'
       token: "${GITHUB_TOKEN}"  # ✅ Use an environment variable
-
+  
 auth:
   environment: development
   providers:
@@ -51,7 +55,7 @@ auth:
       development:
         clientId: "${AUTH_GITHUB_CLIENT_ID}" # ✅ Use an environment variable
         clientSecret: "${AUTH_GITHUB_CLIENT_SECRET}"  # ✅ Use an environment variable
-      signIn:
+        signIn:
           resolvers:
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers
             - resolver: usernameMatchingUserEntityName  
@@ -68,13 +72,13 @@ scaffolder:
 
 catalog:
   import:
-    entityFilename: catalog-info.yaml
+    entityFilename: my-component.yaml
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location]
   locations:
     - type: url
-      target: https://github.com/talhamoinuddin/my-backstage-app/blob/main/catalog-info/my-component.yaml
+      target: 'https://raw.githubusercontent.com/talhamoinuddin/my-backstage-app/main/catalog-info/my-component.yaml'
 
       rules:
         - allow: [Template]

@@ -1,13 +1,9 @@
 import { createBackend } from '@backstage/backend-defaults';
 import dotenv from 'dotenv';
 
-
-
-
-
 const backend = createBackend();
 dotenv.config();
-
+backend.add(import('@backstage/plugin-events-backend'))
 // Add the various plugins
 backend.add(import('@backstage/plugin-app-backend'));
 backend.add(import('@backstage/plugin-proxy-backend'));
