@@ -15,4 +15,4 @@ spec:
   lifecycle: production 
   owner: team-a
   dependsOn:
-      - "api:default/my-existing-api"
+   - "default/my-existing-api"
