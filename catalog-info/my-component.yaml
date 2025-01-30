@@ -1,21 +1,18 @@
 apiVersion: backstage.io/v1alpha1
-kind: User
+kind: Component
 metadata:
-  name: talhamoinuddin
-  annotations:
-    backstage.io/identity: github:talhamoinuddin
+  name: my-backstage-app
   description: "A description of my component"
   tags:
     - web
     - api
 spec:
   profile:
-    displayName: Talha Moinuddin
-    email: talhamoinuddin069@gmail.com
+    displayName: my-backstage-app
   targets:
     - '../template/upload-terraform-and-run-docker.yaml'
   type: service
   lifecycle: production 
   owner: team-a
   dependsOn:
-    - "component:default/my-existing-api"
+   - "default/my-existing-api"
