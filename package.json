@@ -62,6 +62,7 @@
     "@backstage/plugin-auth-backend-module-github-provider": "^0.2.4",
     "@backstage/plugin-scaffolder": "^1.27.4",
     "@backstage/plugin-scaffolder-backend": "^1.29.0",
-    "@backstage/plugin-search-backend-module-pg": "^0.5.40"
+    "@backstage/plugin-search-backend-module-pg": "^0.5.40",
+    "dotenv": "^16.4.7"
   }
 }

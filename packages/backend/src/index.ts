@@ -1,7 +1,12 @@
 import { createBackend } from '@backstage/backend-defaults';
+import dotenv from 'dotenv';
+
+
+
 
 
 const backend = createBackend();
+dotenv.config();
 
 // Add the various plugins
 backend.add(import('@backstage/plugin-app-backend'));

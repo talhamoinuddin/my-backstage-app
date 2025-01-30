@@ -16,7 +16,7 @@ backend:
         options:
           token: "${AUTH_BACKEND_TOKEN}"
           subject: "${GITHUB_USER_ID}"
-          url: "http://localhost:7007/api/auth/github/handler/frame"
+          url: http://localhost:7007/api/auth/github/handler/frame
   events:
     broker: memory
   baseUrl: http://localhost:7007
@@ -69,7 +69,7 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     - type: url
-      target: "https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml"
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
       rules:
         - allow: [Template]
   processing:
