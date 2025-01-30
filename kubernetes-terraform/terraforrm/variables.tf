@@ -1,6 +1,6 @@
 # variables.tf
 variable "github_token" {
-  description = "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"
+  description = "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"
   type        = string
 }
 
