@@ -55,6 +55,7 @@ auth:
       development:
         clientId: "${AUTH_GITHUB_CLIENT_ID}" # ✅ Use an environment variable
         clientSecret: "${AUTH_GITHUB_CLIENT_SECRET}"  # ✅ Use an environment variable
+        enterpriseInstanceUrl: ""
         signIn:
           resolvers:
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers
