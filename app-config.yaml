@@ -58,7 +58,7 @@ auth:
         signIn:
           resolvers:
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers
-            - resolver: usernameMatchingUserEntityName  
+            - resolver: emailMatchingUserEntityProfile  
     guest: {}
 
 scaffolder:
