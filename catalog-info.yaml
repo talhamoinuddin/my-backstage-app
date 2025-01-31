@@ -3,7 +3,7 @@ kind: Location
 metadata:
   name: users
 spec:
+  type: user 
   targets:
     - https://raw.githubusercontent.com/talhamoinuddin/my-backstage-app/main/catalog-info/users.yaml
-  type: user 
  
