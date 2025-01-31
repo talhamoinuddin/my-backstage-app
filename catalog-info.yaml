@@ -1,13 +1,9 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Location
 metadata:
-  name: my-backstage-app
-  description: An example of a Backstage application.
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  name: users
 spec:
-  type: website
-  owner: john@example.com
-  lifecycle: experimental
+  targets:
+    - https://raw.githubusercontent.com/talhamoinuddin/my-backstage-app/main/catalog-info/users.yaml
+  type: user 
+ 

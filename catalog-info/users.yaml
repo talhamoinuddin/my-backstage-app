@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
-kind: User
+kind: user
 metadata:
   name: talhamoinuddin
   annotations:
     backstage.io/identity: github:talhamoinuddin
 spec:
   profile:
-    displayName: Talha Moinuddin
+    displayName: talhamoinuddin
     email: talhamoinuddin069@gmail.com
